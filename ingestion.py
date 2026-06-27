@@ -1,7 +1,7 @@
 import os
 import re
-from dotenv import load_dotenv
-from unstructured.partition.pdf import partition_pdf
+from dotenv import load_dotenv # type: ignore
+from unstructured.partition.pdf import partition_pdf # type: ignore
 
 # Load environment variables from .env file 
 load_dotenv()

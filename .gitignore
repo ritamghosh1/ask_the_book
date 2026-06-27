@@ -1,3 +1,5 @@
 .env
 Sample_book.pdf
 venv
+__pycache__
+.vscode
