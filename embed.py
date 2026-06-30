@@ -28,7 +28,7 @@ class VectorDBManager:
         if self.chroma_collection.count()>0:
             print("Clearing old document from Memory...")
             self.db_client.delete_collection(name=self.collection_name)
-            self.chroma_collection = self.db_client.create_collectin(name=self.collection_name)
+            self.chroma_collection = self.db_client.create_collection(name=self.collection_name)
             self.vector_store = ChromaVectorStore(chroma_collection=self.chroma_collection)
             self.storage_context = StorageContext.from_defaults(vector_store=self.vector_store)
         
@@ -52,7 +52,9 @@ class VectorDBManager:
 
         # Semantic Chunking
         splitter = SemanticSplitterNodeParser(
-            buffer_size=1, breakpoint_percentile_threshold=95, embed_model=self.embed_model
+            buffer_size=1, 
+            breakpoint_percentile_threshold=85, 
+            embed_model=self.embed_model
         )
         nodes = splitter.get_nodes_from_documents(llama_docs)
         print(f"Created {len(nodes)} semantic chunks, Saving to ChromaDB RAM...")
@@ -62,8 +64,8 @@ class VectorDBManager:
             embed_model=self.embed_model
         )
                 
-        print("✅ Success! Database is currently held in RAM.")
-        return index
+        print("Success! Database is currently held in RAM.")
+        return index,nodes
                     
 if __name__ == "__main__":
     pdf_path = "Sample_book.pdf"
