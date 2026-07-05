@@ -1,15 +1,32 @@
-streamlit>=1.32.0
-llama-index>=0.10.20
-groq>=0.4.2
-unstructured[pdf]>=0.16.0
-pdf2image>=1.17.0
-pytesseract>=0.3.10
-chromadb>=0.4.24
-llama-index-embeddings-huggingface>=0.1.4
-llama-index-vector-stores-chroma>=0.1.6
-torch>=2.0.0
-rank-bm25>=0.2.2
-sentence-transformers>=2.5.1
-python-dotenv>=1.0.1
-spacy
+streamlit
+python-dotenv
+groq
+
+# Numpy pinned first — must be installed before thinc/spacy build against it
+numpy==1.26.4
+
+# spaCy stack — pinned to versions that are mutually compatible on Python 3.11
+spacy==3.7.4
+thinc==8.2.3
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+
+# Unstructured — pinned to version that works with spacy 3.7.x
+unstructured==0.12.5
+unstructured[pdf]==0.12.5
+pdfminer.six
+pdfplumber
+pillow
+python-magic
+
+# LlamaIndex
+llama-index
+llama-index-embeddings-huggingface
+llama-index-vector-stores-chroma
+
+# Retrieval
+chromadb
+rank_bm25
+sentence-transformers
+
+# Torch CPU only — avoids the 2GB CUDA build
+torch --index-url https://download.pytorch.org/whl/cpu
