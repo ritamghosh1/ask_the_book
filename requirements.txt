@@ -1,22 +1,13 @@
---extra-index-url https://download.pytorch.org/whl/cpu
-
-# Core Frameworks
-streamlit==1.32.0
-llama-index==0.10.20
-groq==0.4.2
-
-# Document Ingestion & Parsing
+streamlit>=1.32.0
+llama-index>=0.10.20
+groq>=0.4.2
 unstructured[pdf]>=0.16.0
-pdf2image==1.17.0
-pytesseract==0.3.10
-
-# Vector DB & Embeddings
-chromadb==0.4.24
-llama-index-embeddings-huggingface==0.1.4
-llama-index-vector-stores-chroma==0.1.6
+pdf2image>=1.17.0
+pytesseract>=0.3.10
+chromadb>=0.4.24
+llama-index-embeddings-huggingface>=0.1.4
+llama-index-vector-stores-chroma>=0.1.6
 torch>=2.0.0
-
-# Hybrid Retrieval & Reranking
-rank-bm25==0.2.2
-sentence-transformers==2.5.1
-python-dotenv==1.0.1
+rank-bm25>=0.2.2
+sentence-transformers>=2.5.1
+python-dotenv>=1.0.1
