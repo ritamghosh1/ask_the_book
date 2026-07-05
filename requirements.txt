@@ -11,3 +11,5 @@ torch>=2.0.0
 rank-bm25>=0.2.2
 sentence-transformers>=2.5.1
 python-dotenv>=1.0.1
+spacy
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
