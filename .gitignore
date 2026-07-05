@@ -3,3 +3,5 @@ Sample_book.pdf
 venv
 __pycache__
 .vscode
+*.pyc
+chroma_db/
