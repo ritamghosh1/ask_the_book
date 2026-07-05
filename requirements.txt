@@ -2,19 +2,21 @@ streamlit
 python-dotenv
 groq
 
-# Numpy pinned first — must be installed before thinc/spacy build against it
+# Numpy pinned first
 numpy==1.26.4
 
-# spaCy stack — pinned to versions that are mutually compatible on Python 3.11
+# spaCy stack
 spacy==3.7.4
 thinc==8.2.3
 https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
 
-# Unstructured — pinned to version that works with spacy 3.7.x
+# pdfminer pinned — unstructured 0.12.5 needs this exact version
+pdfminer.six==20221105
+
+# Unstructured
 unstructured==0.12.5
 unstructured[pdf]==0.12.5
-pdfminer.six
-pdfplumber
+pdfplumber==0.10.3
 pillow
 python-magic
 
@@ -28,5 +30,5 @@ chromadb
 rank_bm25
 sentence-transformers
 
-# Torch CPU only — avoids the 2GB CUDA build
+# Torch CPU only
 torch --index-url https://download.pytorch.org/whl/cpu
